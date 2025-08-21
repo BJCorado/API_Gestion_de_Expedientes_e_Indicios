@@ -79,7 +79,7 @@ npm install
 ---
 
 ## 🔐 Variables de entorno (.env)
-
+```bash
 Crea un archivo `.env` en la raíz:
 
 Server
@@ -99,7 +99,7 @@ SQL_SERVER_PORT=1433
 SQL_SERVER_DB=GestionExpedientes
 SQL_SERVER_USER=sa
 SQL_SERVER_PASSWORD=TuPassword.Seguro123
-
+```
 > Si la API corre dentro de otro contenedor, `SQL_SERVER_HOST` debe ser el **nombre del servicio** (por ejemplo `sqlserver`) y **no** `localhost`.
 
 
