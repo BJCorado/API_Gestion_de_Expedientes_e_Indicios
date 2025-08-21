@@ -237,12 +237,28 @@ docker compose up -d --build api-expedientes
 
 - Abre [http://localhost:3000/docs](http://localhost:3000/docs)
 - **Authorize** → pega el JWT obtenido en `/api/auth/login`
-- Probar los endpoints:
-  - `POST /api/usuarios` (coordinador)
-  - `GET /api/usuarios` (coordinador; paginado `page`, `size`, `search`)
-  - `POST /api/expedientes`
-  - `POST /api/expedientes/{id}/indicios`
-  - etc.
+
+### 🔑 Autenticación
+- `POST /api/auth/login` → login con `{ username, password }`, retorna `{ token, user }`.
+
+### 👥 Usuarios (solo coordinador)
+- `POST /api/usuarios` → crear usuario (username, password, role).
+- `GET /api/usuarios` → listar usuarios (paginado con `page`, `size`, `search`).
+
+### 📂 Expedientes
+- `GET /api/expedientes` → listar expedientes (paginado + filtros).
+- `GET /api/expedientes/{id}` → obtener expediente por ID.
+- `POST /api/expedientes` → crear expediente (rol técnico; técnico se obtiene del token).
+- `PUT /api/expedientes/{id}` → actualizar expediente (solo el dueño técnico).
+- `PATCH /api/expedientes/{id}/estado` → cambiar estado (solo coordinador: aprobado/rechazado + justificación).
+- `PATCH /api/expedientes/{id}/activo` → activar/desactivar (soft delete).
+
+### 🔎 Indicios
+- `GET /api/expedientes/{id}/indicios` → listar indicios de un expediente.
+- `POST /api/expedientes/{id}/indicios` → crear indicio (solo técnico dueño del expediente).
+- `PUT /api/indicios/{id}` → actualizar indicio (solo técnico dueño).
+- `PATCH /api/indicios/{id}/activo` → activar/desactivar indicio (soft delete).
+
 
 ---
 
