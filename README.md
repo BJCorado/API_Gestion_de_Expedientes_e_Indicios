@@ -42,7 +42,7 @@ Esto instalará tanto las dependencias de producción como las de desarrollo lis
 
 ```bash
 npm install
-
+```
 
 ---
 
