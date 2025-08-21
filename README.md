@@ -13,6 +13,19 @@ Incluye Swagger UI para documentación y ejemplo de **seed** de usuarios.
 
 ---
 
+## ⬇️ Clonar el proyecto
+
+```bash
+# Clonar el repo
+git clone https://github.com/BJCorado/API_Gestion_de_Expedientes_e_Indicios.git
+cd API_Gestion_de_Expedientes_e_Indicios
+```
+
+# Copiar variables de entorno (editar valores)
+cp .env.example .env   # (en Windows PowerShell: copy .env.example .env)
+
+---
+
 ## 📦 Dependencias principales
 
 Estas son las librerías que utiliza el proyecto y su propósito:
@@ -79,9 +92,10 @@ npm install
 ---
 
 ## 🔐 Variables de entorno (.env)
-```bash
+
 Crea un archivo `.env` en la raíz:
 
+```bash
 Server
 
 PORT=3000
@@ -285,7 +299,7 @@ bcrypt.hash('123456', 10).then(console.log);
 ```
 ---
 
-## 🩺 Troubleshooting
+## 🩺 Solucion de problemas
 
 - **Could not find stored procedure 'dbo.sp_...'**  
   Ejecuta el `.sql` en la BD correcta (`-d GestionExpedientes`) y usa el esquema `dbo`.
