@@ -170,7 +170,7 @@ npm run dev
 # http://localhost:3000/docs
 ```
 ### 4)Producción con Docker (ejemplo de Dockerfile):
-
+```bash
 # Build
 FROM node:20-alpine AS builder
 WORKDIR /app
@@ -189,9 +189,10 @@ COPY --from=builder /app/dist ./dist
 ENV NODE_ENV=production
 EXPOSE 3000
 CMD ["node", "dist/server.js"]
+```
 
 Y en docker-compose.yml:
-
+```bash
 services:
   api-expedientes:
     build: .
@@ -203,7 +204,7 @@ services:
     depends_on:
       - sqlserver
 
-
+```
 ### Levantar:
 ```bash
 docker compose up -d --build api-expedientes
@@ -272,6 +273,7 @@ bcrypt.hash('123456', 10).then(console.log);
 ```
 
 ## 🧰 Scripts de npm
+```bash
 {
   "scripts": {
     "dev": "ts-node-dev --respawn --transpile-only src/server.ts",
@@ -280,7 +282,7 @@ bcrypt.hash('123456', 10).then(console.log);
     "lint": "eslint . --ext .ts"
   }
 }
-
+```
 ---
 
 ## 🩺 Troubleshooting
