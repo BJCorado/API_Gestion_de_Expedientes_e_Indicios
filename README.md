@@ -144,7 +144,7 @@ services:
 
 volumes:
   mssql_data:
-
+```
 ---
 
   ## 🐳 Arranque y despliegue
@@ -153,23 +153,23 @@ volumes:
 
 ```bash
 docker compose up -d sqlserver
-
-###2) Ejecutar scripts SQL (SPs)
+```
+### 2) Ejecutar scripts SQL (SPs)
 
 En lugar de ejecutar cada .sql uno por uno, usa el script setup.sql que los contiene todos:
 ```bash
 docker cp .\src\db\setup.sql sqlserver:/tmp/setup.sql
 docker exec -it sqlserver /opt/mssql-tools18/bin/sqlcmd -S localhost -U sa -P 'TuPassword.Seguro123' -C -d GestionExpedientes -i /tmp/setup.sql
-
-###3) Correr la API
+```
+### 3) Correr la API
 
 Desarrollo (hot reload con ts-node-dev):
 ```bash
 npm i
 npm run dev
 # http://localhost:3000/docs
-
-###4)Producción con Docker (ejemplo de Dockerfile):
+```
+### 4)Producción con Docker (ejemplo de Dockerfile):
 
 # Build
 FROM node:20-alpine AS builder
@@ -204,10 +204,10 @@ services:
       - sqlserver
 
 
-###Levantar:
+### Levantar:
 ```bash
 docker compose up -d --build api-expedientes
-
+```
 ## 🔑 Autenticación y Roles
 
 - **Login**: `POST /api/auth/login` → recibe `{ username, password }`, valida con **bcrypt** usando `dbo.sp_Usuarios_Login` y retorna `{ token, user }`.
@@ -269,7 +269,7 @@ Genera <hash-bcrypt> con Node:
 ```bash
 const bcrypt = require('bcrypt');
 bcrypt.hash('123456', 10).then(console.log);
-
+```
 
 ## 🧰 Scripts de npm
 {
