@@ -1,0 +1,50 @@
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Compilación TypeScript
+dist/
+build/
+*.tsbuildinfo
+
+# Entornos
+.env
+.env.local
+.env.*.local
+
+# Logs
+logs
+*.log
+debug.log*
+*.out
+*.err
+
+# Docker
+docker-compose.override.yml
+*.pid
+*.seed
+
+# VSCode
+.vscode/
+*.code-workspace
+
+# Sistema
+.DS_Store
+Thumbs.db
+
+# Coverage y pruebas
+coverage/
+.nyc_output/
+.jest/
+
+# Swagger cache
+swagger.json
+swagger.yaml
+
+# SQL backups/temp
+*.bak
+*.sql~
+*.tmp

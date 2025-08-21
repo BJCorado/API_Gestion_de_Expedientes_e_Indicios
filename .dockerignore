@@ -1,0 +1,11 @@
+# Archivos y carpetas a ignorar por Docker
+node_modules
+npm-debug.log
+Dockerfile*
+.dockerignore
+.git
+.vscode
+dist
+.env.local
+.env.development*
+.env.test*

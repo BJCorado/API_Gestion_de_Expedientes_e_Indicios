@@ -1,0 +1,41 @@
+{
+  "name": "gestion-expedientes-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/server.js",
+  "type": "commonjs",
+  "scripts": {
+    "dev": "ts-node-dev --respawn --transpile-only src/server.ts",
+    "build": "tsc",
+    "start": "node dist/server.js",
+    "docker:up": "docker compose up -d --build",
+    "docker:down": "docker compose down",
+    "db:schema": "docker exec -it sqlserver /opt/mssql-tools18/bin/sqlcmd -S localhost -U sa -P TuPassword.Seguro123 -C -i /scripts/schema.sql",
+    "db:seed": "docker exec -it sqlserver /opt/mssql-tools18/bin/sqlcmd -S localhost -U sa -P TuPassword.Seguro123 -C -i /scripts/seed.sql"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^5.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "mssql": "^11.0.1",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.1"
+  },
+  "devDependencies": {
+    "@types/bcrypt": "^6.0.0",
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.3",
+    "@types/jsonwebtoken": "^9.0.10",
+    "@types/mssql": "^9.1.7",
+    "@types/node": "^24.3.0",
+    "@types/swagger-jsdoc": "^6.0.4",
+    "@types/swagger-ui-express": "^4.1.8",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.9.2"
+  }
+}
